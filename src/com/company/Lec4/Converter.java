@@ -53,4 +53,26 @@ public class Converter {
         }
         return bin;
     }
+
+    public static int dectoany(int deci,int base){
+
+        int place=1;
+        int any=0;
+
+        while(deci>0){
+
+            int digit = deci % base;
+            deci=deci/base;
+            any= any+ digit*place;
+            place=place*10;
+        }
+        return any;
+    }
+
+    public static int any2any(int any, int base1, int base2){
+
+        int deci= anytodec(any,base1);
+        return dectoany(deci,base2);
+    }
+
 }
