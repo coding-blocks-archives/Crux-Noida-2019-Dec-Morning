@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Lec11;
 
 public class nqueens {
 
