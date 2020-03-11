@@ -4,16 +4,15 @@ public class QueueClient {
 
     public static void main(String[] args) {
 
-        Queue queue = new Queue();
+        CircularQueue queue = new CircularQueue();
 
         for (int i = 0; i <=5 ; i++) {
             queue.insert(i);
-            queue.display();
         }
+        System.out.println(queue.remove());
 
-        for (int i = 0; i <=5 ; i++) {
-            System.out.println(queue.remove());
-            queue.display();
-        }
+        queue.insert(8);
+        System.out.println(queue.remove());
+
     }
 }

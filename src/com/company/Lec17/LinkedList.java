@@ -1,0 +1,232 @@
+package com.company.Lec17;
+
+/**
+ * LEC 18 BY FAMOUS LECTURER AND WORLD WIDE HANDSOME SHUBHAM RAWAT
+ */
+public class LinkedList {
+
+    private Node head;
+    private Node tail;
+
+    private int size;
+
+    public class Node{
+
+        int value;
+        Node next;
+
+        public Node(int value) {
+            this.value = value;
+        }
+    }
+
+    public void insertfirst(int value){
+
+        Node node = new Node(value);
+        node.next=head;
+        head=node;
+
+        if(tail==null){
+            tail=head;
+        }
+        size++;
+    }
+
+    public void insertlast(int value){
+        if(size==0){
+            insertfirst(value);
+            return;
+        }
+
+        Node node= new Node(value);
+        tail.next=node;
+        tail=node;
+        size++;
+    }
+
+    public void display(){
+
+        Node temp = head;
+
+        while(temp!=null){
+            System.out.print(temp.value+ " -> ");
+            temp=temp.next;
+        }
+
+        System.out.println("null");
+    }
+
+    public int deletefirst(){
+
+        if(size==0){
+            System.out.println("empty");
+            return -1;
+        }
+        int temp=head.value;
+        head=head.next;
+        size--;
+        return temp;
+    }
+
+    public int deletelast(){
+
+        if(size<2){
+            return deletefirst();
+        }
+
+        Node temp = head;
+
+        while(temp.next!=tail){
+
+            temp=temp.next;
+        }
+
+        int val=tail.value;
+        tail=temp;
+        temp.next=null;
+        size--;
+        return val;
+    }
+
+    public Node get(int index){
+
+        Node temp=head;
+        for (int i = 0; i <index ; i++) {
+            temp=temp.next;
+        }
+
+        return temp;
+    }
+
+    public void insertbetween(int index, int value){
+
+        if(index==0){
+            insertfirst(value);
+            return;
+        }
+
+        if(index==size){
+            insertlast(value);
+            return;
+        }
+
+        Node prev = get(index-1);
+        Node node = new Node(value);
+        node.next=prev.next;
+        prev.next=node;
+        size++;
+    }
+
+    public int deleteatindex(int index){
+
+        if(index==0){
+           return deletefirst();
+        }
+
+        if(index==size-1){
+            return deletelast();
+        }
+
+        Node prev= get(index-1);
+        int temp= prev.next.value;
+
+        prev.next=prev.next.next;
+        size--;
+        return temp;
+    }
+
+    public void duplicates(){
+
+        Node temp= head;
+
+        while(temp.next!=null){
+
+            if(temp.value==temp.next.value){
+                temp.next=temp.next.next;
+                size--;
+            }
+            else{
+                temp=temp.next;
+            }
+        }
+        tail=temp;
+    }
+
+    public Node find(int value){
+
+        Node temp= head;
+
+        while(temp!=null){
+
+            if(temp.value==value){
+                return temp;
+            }
+        }
+        return null;
+    }
+
+    public void reverse(){
+        reverse(head);
+    }
+
+    private void reverse(Node node){
+
+        if(node==tail){
+            head=tail;
+            return;
+        }
+
+        reverse(node.next);
+
+        tail.next=node;
+        tail=node;
+        tail.next=null;
+    }
+
+    public LinkedList merge(LinkedList first, LinkedList second){
+
+        LinkedList list =new LinkedList();
+
+        Node f =first.head;
+        Node s= second.head;
+
+        while(f!=null && s!=null){
+
+            if(f.value<s.value){
+                list.insertlast(f.value);
+                f=f.next;
+            }
+            else{
+                list.insertlast(s.value);
+                s=s.next;
+            }
+        }
+
+        while(f!=null){
+            list.insertlast(f.value);
+            f=f.next;
+        }
+
+        while(s!=null){
+            list.insertlast(s.value);
+            s=s.next;
+        }
+
+        return list;
+    }
+
+    public int mid(){
+
+        Node slow=head;
+        Node fast=head;
+
+        while(fast.next!=null && fast.next.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+
+        return slow.value;
+    }
+
+
+}
