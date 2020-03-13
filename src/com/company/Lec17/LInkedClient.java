@@ -9,17 +9,23 @@ public class LInkedClient {
 //        list.insertfirst(1);
 //        list.insertfirst(2);
 //        list.insertfirst(3);
-        list1.insertlast(1);
-        list1.insertlast(8);
         list1.insertlast(9);
-        list2.insertlast(4);
-        list2.insertlast(5);
-        list2.insertlast(6);
+        list1.insertlast(8);
+        list1.insertlast(6);
+        list1.insertlast(5);
+        list1.insertlast(4);
+        list1.insertlast(3);
+//
+//        LinkedList list =new LinkedList();
+//
+//        LinkedList list3= list.merge(list1,list2);
+//        list3.display();
 
-        LinkedList list =new LinkedList();
+        list2=list2.mergesort(list1);
 
-        LinkedList list3= list.merge(list1,list2);
-        list3.display();
+        list2.display();
+
+
 
 
 //        System.out.println(list.deletefirst());

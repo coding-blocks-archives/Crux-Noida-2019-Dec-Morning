@@ -215,7 +215,7 @@ public class LinkedList {
         return list;
     }
 
-    public int mid(){
+    public Node mid(){
 
         Node slow=head;
         Node fast=head;
@@ -225,7 +225,31 @@ public class LinkedList {
             fast=fast.next.next;
         }
 
-        return slow.value;
+        return slow;
+    }
+
+    public LinkedList mergesort(LinkedList list){
+
+        if(list.size==1){
+            return list;
+        }
+        Node mid =list.mid();
+        LinkedList first = new LinkedList();
+        first.head=list.head;
+        first.tail=mid;
+        first.size=(list.size+1)/2;
+
+        LinkedList second= new LinkedList();
+        second.head=mid.next;
+        second.tail=list.tail;
+        second.size=list.size/2;
+
+        mid.next=null;
+
+        first=mergesort(first);
+        second=mergesort(second);
+
+        return merge(first,second);
     }
 
 
