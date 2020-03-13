@@ -1,4 +1,4 @@
-package com.company.Lec17;
+package com.company.Lec17_18;
 
 /**
  * LEC 18 BY FAMOUS LECTURER AND WORLD WIDE HANDSOME SHUBHAM RAWAT

@@ -1,4 +1,4 @@
-package com.company.Lec17;
+package com.company.Lec17_18;
 
 public class LInkedClient {
 
