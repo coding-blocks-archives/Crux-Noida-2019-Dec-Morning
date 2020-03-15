@@ -6,7 +6,7 @@ public class LexoPermute {
 
     public static void main(String[] args) {
 
-        String str="abc";
+        String str="aab";
         int fre[]=frequency(str);
         System.out.println(Arrays.toString(fre));
 
