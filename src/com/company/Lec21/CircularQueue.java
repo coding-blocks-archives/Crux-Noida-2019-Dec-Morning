@@ -1,11 +1,11 @@
-package com.company.Lec14;
+package com.company.Lec21;
 
 public class CircularQueue {
 
-    private int data[];
-    private int end;
-    private int front;
-    private int size=0;
+    protected int data[];
+    protected int end;
+    protected int front;
+    protected int size=0;
     private int DEFAULT_SIZE=10;
 
     public CircularQueue(){
@@ -26,7 +26,7 @@ public class CircularQueue {
         size++;
     }
 
-    private boolean isFull() {
+    protected boolean isFull() {
         return size==data.length;
     }
 
@@ -57,7 +57,7 @@ public class CircularQueue {
     }
 
     public void display(){
-        for (int i = 0; i <size; i++) {
+        for (int i = 0; i < size ; i++) {
             System.out.print(data[(front+i)%data.length] + " ");
         }
         System.out.println();
