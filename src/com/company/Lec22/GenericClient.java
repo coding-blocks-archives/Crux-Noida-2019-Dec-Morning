@@ -15,6 +15,7 @@ public class GenericClient {
 //
 
         tree.levelorder();
+        tree.Atlevel(1);
     }
 
 }

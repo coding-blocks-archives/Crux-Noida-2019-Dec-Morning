@@ -107,6 +107,23 @@ public class GenericTrees {
         return max;
     }
 
+    public void Atlevel(int k){
+
+        Atlevel(root,k);
+    }
+
+    public void Atlevel(Node node,int k){
+
+        if(k==0){
+            System.out.println(node.value);
+        }
+
+        for (int i = 0; i <node.children.size() ; i++) {
+            Atlevel(node.children.get(i),k-1);
+        }
+
+    }
+
 
     public class Node{
 
