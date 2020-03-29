@@ -12,6 +12,9 @@ public class BInaryClient {
 
         Scanner s = new Scanner(file);
         BInaryTree tree = new BInaryTree();
+        String  s1="hello";
+
+
 
         tree.insert(s);
         tree.insert(s);
@@ -19,13 +22,19 @@ public class BInaryClient {
         tree.insert(s);
         tree.insert(s);
         tree.insert(s);
+
+        tree.mirror();
+
+        tree.display();
 
 
 //        System.out.println(tree.height());
 
 //        System.out.println(tree.find(9));
 //        tree.levelorder();
-        tree.Atlevel(2);
+//        tree.Atlevel(2);
+
+//        System.out.println(tree.diameter());
 
     }
 }

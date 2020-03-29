@@ -139,6 +139,43 @@ public class BInaryTree {
     }
 
 
+    public int diameter(){
+        return diameter(root);
+    }
+
+    private int diameter(Node node) {
+
+        if(node==null){
+            return 0;
+        }
+
+        int current = 1+ height(node.left) + height(node.right);
+
+        int max= Math.max(diameter(node.left),diameter(node.right));
+
+        return Math.max(current,max);
+    }
+
+    public void mirror(){
+
+        mirror(root);
+    }
+
+    private void mirror(Node node) {
+
+        if(node==null){
+            return;
+        }
+
+        Node temp =node.left;
+        node.left=node.right;
+        node.right=temp;
+
+        mirror(node.left);
+        mirror(node.right);
+    }
+
+
     public void Atlevel(int k){
 
         Atlevel(root,k);
@@ -157,6 +194,8 @@ public class BInaryTree {
         Atlevel(node.left,k-1);
         Atlevel(node.right,k-1);
     }
+
+
 
     //Homework -- > Find the sum at Level
 
