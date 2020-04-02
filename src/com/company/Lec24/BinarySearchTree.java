@@ -1,6 +1,7 @@
 package com.company.Lec24;
 
 
+
 import java.util.Arrays;
 
 public class BinarySearchTree {
@@ -111,8 +112,6 @@ public class BinarySearchTree {
         makefromsorted(ar,start,mid-1);
         makefromsorted(ar,mid+1,end);
     }
-
-
 
     public int successor(int k){
 
