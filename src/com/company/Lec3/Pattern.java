@@ -1,5 +1,6 @@
 package com.company.Lec3;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Pattern {
@@ -7,7 +8,6 @@ public class Pattern {
 
         Scanner s= new Scanner(System.in);
         int n= s.nextInt();
-
         int row=1;
         while(row<=n){
             int col=1;
