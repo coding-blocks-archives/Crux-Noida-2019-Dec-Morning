@@ -11,10 +11,14 @@ public class ListGraphClient {
         graph.addVertex("C");
         graph.addVertex("D");
 
-        graph.addEdge("A","B");
+        graph.addEdge("C","D");
         graph.addEdge("A","C");
+        graph.addEdge("A","B");
+        graph.addEdge("D","B");
+        graph.addEdge("A","D");
 
-        graph.display();
-
+//        graph.BFT();
+        System.out.println(graph.bipartite());
+//        graph.display();
     }
 }
