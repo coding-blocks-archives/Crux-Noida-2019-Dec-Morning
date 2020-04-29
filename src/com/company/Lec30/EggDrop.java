@@ -14,10 +14,7 @@ public class EggDrop {
         int min = floor;
 
         for (int i = 1; i <= floor ; i++) {
-            int down = eggdrop(egg - 1, i-1);
-            int up = eggdrop(egg, floor - i);
-
-            int current = Math.max(up, down) + 1;
+            int current = Math.max(eggdrop(egg - 1, i-1),eggdrop(egg, floor - i));
 
             if (current < min){
                 min = current;
