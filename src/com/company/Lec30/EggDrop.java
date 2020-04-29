@@ -23,7 +23,6 @@ public class EggDrop {
                 min = current;
             }
         }
-
         return min;
     }
 }
