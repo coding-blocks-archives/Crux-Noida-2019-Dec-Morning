@@ -16,7 +16,7 @@ public class HashmapusingAL {
 
     public HashmapusingAL() {
 
-        for (int i = 0; i <3 ; i++) {
+        for (int i = 0; i <100 ; i++) {
 
             entities.add(new LinkedList<>());
         }
@@ -29,7 +29,6 @@ public class HashmapusingAL {
         }
 
         int hashcode= Math.abs(key.hashCode()%entities.size());
-
         LinkedList<Entity> list = entities.get(hashcode);
 
         for (Entity entity: list) {

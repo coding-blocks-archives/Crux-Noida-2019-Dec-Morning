@@ -51,7 +51,7 @@ public class AdjacencyListGraph<T> {
 
     public void DFT(){
 
-        Stack<Vertex> stack = new Stack();
+        Stack<Vertex> stack = new Stack<>();
         Set<Vertex> visited = new HashSet<>();
 
         Vertex first = vertices.get(0);
@@ -104,9 +104,6 @@ public class AdjacencyListGraph<T> {
             System.out.println();
         }
     }
-
-
-
 
     public void BFT(){
 

@@ -1,9 +1,6 @@
 package com.company.Lec28;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class AdjacencyMapGraph<T> {
 
@@ -69,10 +66,13 @@ public class AdjacencyMapGraph<T> {
 
         AdjacencyMapGraph<T> map = new AdjacencyMapGraph<>();
 
+        //adding all the vertex in map
         for (T values: vertexMap.keySet()) {
             map.addVertex(values);
         }
 
+
+        //Adding edges to edgelist
         for (Vertex vertex : vertexMap.values()) {
 
             for (Vertex padosi: vertex.neighbours.keySet()) {
@@ -81,20 +81,16 @@ public class AdjacencyMapGraph<T> {
             }
         }
 
-        edges.sort(new Comparator<Edge>() {
-            @Override
-            public int compare(Edge o1, Edge o2) {
-                return o1.weight-o2.weight;
-            }
-        });
+        // Sorting all the edges in increasing order
+        edges.sort((o1, o2) -> o1.weight-o2.weight);
 
+        //Adding edges
         for (Edge edge: edges) {
 
             if(union(edge.first,edge.second)){
                 map.addEdgeWeight(edge.first.value,edge.second.value,edge.weight);
             }
         }
-
         return map;
     }
 
@@ -135,7 +131,6 @@ public class AdjacencyMapGraph<T> {
             this.second = second;
             this.weight = weight;
         }
+
     }
-
-
 }
