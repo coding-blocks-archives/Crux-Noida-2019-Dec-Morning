@@ -23,7 +23,5 @@ public class EggDrop {
         return min + 1;
     }
 
-
-
     //  Iterative Soln discussed
 }
