@@ -24,7 +24,6 @@ public class LCS {
         if(f==s){
           return 1+ LCSsol(s1.substring(1),s2.substring(1));
         }
-
         else{
             return Math.max(LCSsol(s1.substring(1),s2),LCSsol(s1,s2.substring(1)));
         }

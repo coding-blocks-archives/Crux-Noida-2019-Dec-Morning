@@ -62,7 +62,7 @@ public class AdjacencyMapGraph<T> {
 
         setParent();
 
-        ArrayList<Edge> edges =new ArrayList<Edge>();
+        ArrayList<Edge> edges =new ArrayList<>();
 
         AdjacencyMapGraph<T> map = new AdjacencyMapGraph<>();
 

@@ -20,6 +20,10 @@ public class EggDrop {
                 min = current;
             }
         }
-        return min;
+        return min + 1;
     }
+
+
+
+    //  Iterative Soln discussed
 }
